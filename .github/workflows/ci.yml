@@ -19,12 +19,11 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: "14.x"
-        - name: 🤹‍♂️ Setup PNPM
-          uses: pnpm/action-setup@v1.2.1
+        - uses: pnpm/action-setup@v1.2.1
           with:
-            version: 4.11.1
+            version: 5.13.6
             run_install: |
               - recursive: true
-                args: [--frozen-lockfile]
+                args: [--frozen-lockfile
         - name: 🙏 Test
           run: ls -a
