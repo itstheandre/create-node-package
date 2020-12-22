@@ -1,0 +1,29 @@
+name: Release 🚀
+
+on: push
+
+jobs:
+  release:
+    name: 🏃‍♂️ Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 💸 node_modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{runner.os}}-node-${{ hashFiles('**/pnpm-lock.yaml')}}
+          restore-keys: |
+            ${{ runner.os }}-node
+      - name: 🏗️ Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+            node-version: "14.x"
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+            version: 5.13.6
+            run_install: |
+              - recursive: true
+                args: [--frozen-lockfile]
+      - name: 🙏
+        run: ls -a
