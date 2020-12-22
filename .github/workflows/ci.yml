@@ -22,7 +22,7 @@ jobs:
         - name: 🤹‍♂️ Setup PNPM
           uses: pnpm/action-setup@v1.2.1
           with:
-            version: 5.13.6
+            version: 4.11.1
             run_install: |
               - recursive: true
                 args: [--frozen-lockfile]

@@ -14,10 +14,6 @@
     "npm",
     "package"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+ssh//git@github.com/itstheandre/create-node-package"
-  },
   "description": "",
   "dependencies": {
     "await-to-js": "^2.1.1",
