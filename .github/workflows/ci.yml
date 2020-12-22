@@ -24,6 +24,6 @@ jobs:
             version: 5.13.6
             run_install: |
               - recursive: true
-                args: [--frozen-lockfile
+                args: [--frozen-lockfile]
         - name: 🙏 Test
           run: ls -a
