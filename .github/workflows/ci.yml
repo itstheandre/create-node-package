@@ -26,5 +26,5 @@ jobs:
             run_install: |
               - recursive: true
                 args: [--frozen-lockfile]
-        - name: 🛠️ Build
-          run: pnpm run build --if-exists
+        - name: 🙏 Test
+          run: ls -a
