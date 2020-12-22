@@ -7,6 +7,10 @@
   "scripts": {
     "release": "semantic-release --dry-run"
   },
+  "bin": {
+    "create-oss-cli": "index.js",
+    "noss": "index.js"
+  },
   "keywords": [
     "oss",
     "node",
@@ -43,5 +47,16 @@
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.6",
     "semantic-release": "^17.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
