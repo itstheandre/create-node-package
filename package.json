@@ -1,6 +1,6 @@
 {
   "name": "create-oss-package",
-  "version": "0.0.0-development",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "André de Albuquerque <oss@itstheandre.com> (https://itstheandre.com)",
   "license": "MIT",
