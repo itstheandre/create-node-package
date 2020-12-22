@@ -1,6 +1,6 @@
 name: Release 🚀
 
-on: push
+on: [push]
 
 jobs:
   release:
