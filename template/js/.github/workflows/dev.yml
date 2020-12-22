@@ -1,0 +1,52 @@
+name: 💻 Dev CI
+on:
+  pull_request:
+    branches: [dev]
+  push:
+    branches: [dev]
+
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['12', '14']
+    name: Node ${{ matrix.node }} build
+    steps:
+      - uses: actions/checkout@v2 
+      - name: 👀 Cache node_modules 
+        uses: actions/cache@v1
+        with:
+          path: ~/.pnpm-store
+          key: ${{runner.os}}-node-${{ hashFiles('**/pnpm-lock.yaml')}}
+          restore-keys: |
+            ${{ runner.os }}-node
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node}}
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.13.6
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile]
+      - run: pnpm run test:cov
+      - name: ZIP Coverage ${{matrix.node}}
+        if: github.event_name == 'push'
+        run: zip -r coverage.zip ./coverage
+      - name: Upload Test Coverage ${{matrix.node}}
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage
+          path: coverage
+      - name: ZIP Build Assets ${{matrix.node}}
+        if: github.event_name == 'push'
+        run: zip -r build.zip ./dist
+      - name: Upload build
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: dist

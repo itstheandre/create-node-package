@@ -1,0 +1,56 @@
+{
+  "name": "create-node-package",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "André de Albuquerque <oss@itstheandre.com> (https://itstheandre.com)",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "oss",
+    "node",
+    "node package",
+    "npm",
+    "package"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh//git@github.com/itstheandre/create-node-package"
+  },
+  "description": "",
+  "dependencies": {
+    "await-to-js": "^2.1.1",
+    "chalk": "^4.1.0",
+    "cli-alerts": "^1.2.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-meow-help": "^2.0.2",
+    "cli-should-cancel": "^1.0.3",
+    "cli-welcome": "^2.2.2",
+    "copy-template-dir": "^1.4.0",
+    "execa": "^5.0.0",
+    "get-repo-package-json": "^2.0.0",
+    "inquirer": "^7.3.3",
+    "meow": "^8.0.0",
+    "ora": "^5.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.6",
+    "semantic-release": "^17.3.0"
+  }
+}
