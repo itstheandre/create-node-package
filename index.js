@@ -1,4 +1,3 @@
-const inquirer = require("inquirer");
 const cli = require("./utils/cli");
 const getName = require("./utils/getName");
 const init = require("./utils/init");
