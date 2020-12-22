@@ -5,7 +5,7 @@
   "author": "André de Albuquerque <oss@itstheandre.com> (https://itstheandre.com)",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "semantic-release --dry-run"
   },
   "keywords": [
     "oss",

@@ -25,5 +25,8 @@ jobs:
             node-version: "14.x"
       - name: 🏃‍♂️ Install Deps
         run: yarn install --frozen-lockfile
-      - name: 🙏
-        run: ls -a
+      - name: 📦 Release to NPM
+        run:  yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
