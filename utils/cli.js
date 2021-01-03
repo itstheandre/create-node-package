@@ -12,11 +12,6 @@ const flags = {
     default: false,
     desc: "Does this project use javascript?",
   },
-  help: {
-    type: "boolean",
-    default: false,
-    desc: "Display help data",
-  },
 };
 
 const commands = {

@@ -6,8 +6,9 @@ const question = require("./utils/question");
 const performCopy = require("./utils/performCopy");
 const { getTech } = require("./utils/techUsed");
 const { input, flags, showHelp } = cli;
-const { help = false, js = false, ts = false } = flags;
+const { js = false, ts = false } = flags;
 
+const help = input.includes("help");
 async function main() {
   init();
   if (help) {
