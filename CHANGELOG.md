@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/itstheandre/create-oss-package/compare/v1.0.2...v1.0.3) (2021-01-03)
+
+
+### Bug Fixes
+
+* **help:** help command is changed ([4a27283](https://github.com/itstheandre/create-oss-package/commit/4a27283042ab245be420159f108f32bd753f6e84))
+
 ## [1.0.2](https://github.com/itstheandre/create-oss-package/compare/v1.0.1...v1.0.2) (2020-12-22)
 
 
